@@ -7,7 +7,9 @@ import datetime
 reader = SimpleMFRC522()
 
 try:
-        # id dell'attrezzo gia inserito nel database mysql
+        #====================================================================
+        # ID ATTREZZO E' RELATIVO A QUELLO SALVATO NEL DATABASE 
+        #====================================================================
         idAttrezzo = input('Inserisci id dell attrezzo: ')
         # timestamp attuale
         timestamps = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")

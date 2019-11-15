@@ -7,10 +7,10 @@ from mfrc522 import SimpleMFRC522
 
 reader = SimpleMFRC522()
 
-print("Hold a tag near the reader")
+print("Avvicina il tag rfid")
 
 try:
-    id, text = reader.read()
+    id, timestamps = reader.read()
     print(id)
     print(text)
 
