@@ -24,10 +24,10 @@ print("Avvicina il tag rfid")
 try:
     # legge ID e Timestamps dal tag
     data = reader.read()
-    data.split("_")
-    idAttrezzo = data[0]
-    time= data[1]
-    
+    #data.split("_")
+    idAttrezzo = data
+    #time= data[1]
+    time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     # avvia una sessione per il gps
     session = gps.gps("localhost", "2947")
     session.stream(gps.WATCH_ENABLE | gps.WATCH_NEWSTYLE)
