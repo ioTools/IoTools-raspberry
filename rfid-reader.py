@@ -6,6 +6,7 @@ sys.path.append('/home/pi/MFRC522-python')
 from mfrc522 import SimpleMFRC522
 import gps
 import requests
+from datetime import datetime
 
 #=========================================
 # CONTIENE L'ID DEL FURGONE (GIA INSERITO NEL DB)
@@ -27,7 +28,8 @@ try:
     #data.split("_")
     idAttrezzo = data
     #time= data[1]
-    time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    d = datetime.utcnow()
+    time = calendar.timegm(d.utctimetuple()
     # avvia una sessione per il gps
     session = gps.gps("localhost", "2947")
     session.stream(gps.WATCH_ENABLE | gps.WATCH_NEWSTYLE)
